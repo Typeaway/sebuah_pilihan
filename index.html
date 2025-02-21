@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilihan Ya dan Tidak</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 20px;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        #yesButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noButton {
+            background-color: #FF5733;
+            color: white;
+        }
+        #message {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="message">Mau ga jadi pacar akuuhh?? 😽😽</p>
+    <button id="yesButton" onclick="showCongratulations()">Ya</button>
+    <button id="noButton" onclick="growYesButton()">Tidak</button>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const message = document.getElementById('message');
+        let baseWidth = 100;
+        let baseHeight = 40;
+
+        yesButton.style.width = baseWidth + 'px';
+        yesButton.style.height = baseHeight + 'px';
+
+        function growYesButton() {
+            yesButton.style.width = yesButton.offsetWidth * 2 + 'px';
+            yesButton.style.height = yesButton.offsetHeight * 2 + 'px';
+        }
+
+        function showCongratulations() {
+            message.textContent = 'Selamat! Sekarang kita jadian! ❤️🥳';
+            yesButton.style.display = 'none';
+            document.getElementById('noButton').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
